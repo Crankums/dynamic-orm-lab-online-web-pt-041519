@@ -53,5 +53,17 @@ class InteractiveRecord
     DB[:conn].execute(sql, name)
   end
 
-
+  def self.find_by(attrib)
+    attrib_key = attrib.keys.join()
+    attrib_value = attrib.values.first
+    sql = <<-SQL
+    SELECT *
+    FROM #{self.table_name}
+    WHERE #{attrib_key} = #{attrib_value}
+    LIMIT 1
+    SQL
+    DB[:conn].execute(sql)
+  end
+  
+    
 end
