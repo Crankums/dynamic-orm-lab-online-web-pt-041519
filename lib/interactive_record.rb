@@ -60,7 +60,7 @@ class InteractiveRecord
     SELECT *
     FROM #{self.table_name}
     WHERE #{attrib_key} = #{attrib_value}
-    LIMIT 1
+
     SQL
     DB[:conn].execute(sql)
   end
