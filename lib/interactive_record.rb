@@ -64,6 +64,8 @@ class InteractiveRecord
   #   SQL
   #   DB[:conn].execute(sql)
   # end
+  #THIS WAS THE SOLUTION BRANCH'S ANSWER. I was getting a "No such column" error regarding a Susan column which didn't occur in prior runs. My study group and
+  #I could not figure out what's wrong with this or similar answers and the answer we got from flatiron instructors was that the spec had issues.
   def self.find_by(attribute_hash)
       value = attribute_hash.values.first
       formatted_value = value.class == Fixnum ? value : "'#{value}'"
